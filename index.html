@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Research Methodology — NPTEL Study Studio</title>
+<style>
+:root{color-scheme:dark;--bg:#0c0e14;--panel:#171b26;--panel2:#12151e;--ink:#f3f1ee;--mut:#969aaa;--gold:#f5ca4e;--gold2:#dcae36;--line:#282c39;--green:#65dfb0;--red:#ff7783;--blue:#8cb9ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.005em}
+header{padding:54px 22px 42px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#1d2137 0%,#111420 48%,#0c0e14 78%);border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-block;padding:5px 14px;border:1px solid #6e592b;border-radius:999px;color:var(--gold);font:12px/1.5 ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase;background:#2a2417}
+h1{margin:22px auto 10px;max-width:700px;font-size:clamp(2.2rem,7vw,4.4rem);line-height:1.02;letter-spacing:-.055em;font-weight:850}h1 em{font-style:normal;color:var(--gold)}header p{margin:14px auto 0;max-width:660px;color:#a7a9b7;font-size:clamp(1rem,2.5vw,1.2rem)}
+.hero-meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:24px auto 0;color:#b6b8c3;font:12px ui-monospace,monospace}.hero-meta span{border:1px solid #303342;border-radius:999px;padding:6px 11px;background:#141722}
+nav{display:flex;gap:8px;overflow:auto;white-space:nowrap;padding:11px max(16px,calc((100vw - 1060px)/2));position:sticky;top:0;background:#11141dec;backdrop-filter:blur(14px);z-index:5;border-bottom:1px solid var(--line);scrollbar-width:thin}
+nav button{flex:none;border:0;border-bottom:2px solid transparent;background:transparent;color:#989baa;padding:12px 16px;cursor:pointer;font:600 .9rem ui-monospace,monospace;letter-spacing:.04em}
+nav button.on{color:var(--gold);border-bottom-color:var(--gold)}nav button.done::after{content:" ✓";color:var(--green)}
+main{max-width:980px;margin:0 auto;padding:24px 18px 70px}.card{background:var(--panel);border:1px solid #292d3a;border-radius:18px;padding:clamp(18px,4vw,28px);margin-bottom:18px;box-shadow:0 8px 28px #0002}
+h2{margin:0 0 5px;font-size:clamp(1.2rem,3vw,1.65rem);line-height:1.3;letter-spacing:-.02em}h3{margin:20px 0 8px;font-size:1.03rem;color:var(--gold)}.src{color:var(--mut);font:13px ui-monospace,monospace;margin-bottom:15px}
+ul{padding-left:22px;margin:8px 0}li{margin:6px 0;color:#c2c4ce}li b{color:#f3f1ee}code{color:var(--green);background:#0e1119;padding:2px 5px;border-radius:5px}
+.hot{background:#242018;border:1px solid #564725;border-left:4px solid var(--gold);padding:12px 15px;border-radius:10px;margin:14px 0;color:#e2d8bc;font-size:.95rem}.q{border-top:1px solid var(--line);padding:17px 0}.q p{margin:0 0 10px;font-weight:650;color:#eee}.o{display:block;width:100%;text-align:left;margin:7px 0;padding:11px 14px;border:1px solid #303443;border-radius:10px;background:#141722;color:#b7bac6;cursor:pointer;font-size:.94rem;transition:.15s}.o:hover:not(:disabled){border-color:var(--gold);color:#fff;transform:translateY(-1px)}.o.right{background:#14261f;border-color:var(--green);color:#bcf6df}.o.wrong{background:#2d1b21;border-color:var(--red);color:#ffc3c8}.ex{font-size:.93rem;color:#bfc1ca;margin-top:11px;padding:12px 14px;background:var(--panel2);border-radius:10px;display:none}.ex.s{display:block}.score{font-weight:750;color:var(--gold);margin-top:14px}.act{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.act button,.primary{padding:10px 16px;border-radius:10px;border:1px solid var(--gold);background:var(--gold);color:#17140c;cursor:pointer;font-weight:700}.act button.g{background:transparent;color:var(--ink);border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}td,th{border:1px solid var(--line);padding:8px 10px;text-align:left}th{color:var(--gold)}.tag{display:inline-block;border-radius:6px;padding:4px 9px;background:var(--gold);color:#17140c;font:700 11px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}.weekhead{display:grid;grid-template-columns:auto 1fr;align-items:start;gap:14px;margin:8px 0 20px}.weekhead h2{font-size:clamp(1.35rem,4vw,1.9rem)}.progress-card{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.progress-number{color:var(--gold);font-weight:800;font-size:1.8rem}.progress-track{height:9px;background:#292d3b;border-radius:9px;flex:1;min-width:110px;overflow:hidden}.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:inherit;transition:width .25s}.search{width:100%;padding:12px 14px;border:1px solid #343847;border-radius:10px;background:#11141e;color:var(--ink);font:inherit;margin:12px 0}.resource{color:var(--gold);text-decoration:none}.resource:hover{text-decoration:underline}.muted{color:var(--mut)}.important-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.topic{background:var(--panel2);padding:16px;border-radius:13px;border:1px solid var(--line)}.topic h3{margin:0 0 6px}.topic p{margin:0;color:#b9bbc5}.disclaimer{border:1px solid #553a34;background:#211817;border-radius:12px;padding:13px 16px;color:#d5bdb7;font-size:.9rem}
+@media(max-width:600px){header{padding:40px 18px 32px}main{padding:17px 13px 52px}nav{padding:7px 8px}nav button{padding:11px 12px;font-size:.82rem}.card{border-radius:15px}.weekhead{gap:10px}.hero-meta{font-size:11px}}
+</style></head><body>
+<header><div class="eyebrow">NPTEL · IIT Madras · Study Studio</div><h1>Research <em>Methodology</em></h1><p>A clear, week-by-week guide to research thinking, methods and exam revision. Learn the idea, see a simple example, then practise.</p><div class="hero-meta"><span>8 official course weeks</span><span>12 guided study units</span><span>Practice with explanations</span></div></header>
+<nav id="nav" aria-label="Study sections"></nav><main id="main"></main>
+<script>
+const W=[
+{t:"Week 1 – What is Research, Advisor & Student",s:"Lectures 1–4",
+n:`<h3>Core ideas</h3><ul>
+<li>Research degree (MS/PhD) ≠ UG: <b>creating something new</b>, open-ended, no fixed end date. PhD is <i>qualitatively</i> different (you can guide another PhD after it).</li>
+<li>Textbook = accumulated knowledge; research paper = cutting edge. In research <b>you ask the questions and find the answers</b> (relevant ones).</li>
+<li>Einstein: <i>"If we knew what we were doing, it would not be called research."</i> Also: "Imagination is more important than knowledge."</li>
+<li>Advisor = guide (not instruction giver): helps interpret results, gives perspective, keeps you from being lost. Student becomes the expert at the end ("role reversal").</li>
+<li>Choose area by <b>interest/challenge, not worry</b>. "Signals & systems" is too broad – areas get more specialised. Do homework on area + advisor (style, theory vs experiment).</li></ul>
+<div class="hot">⭐ <b>Learning types:</b> Just-in-time (learn only what's needed), Strategic (goal-focused), In-depth (core area). A PhD starts JIT and ends in-depth.</div>
+<div class="hot">⭐ <b>Daniel Pink – Drive:</b> Mastery, Purpose, Autonomy (intrinsic motivation).</div>
+<ul><li>Keep a <b>notebook</b>; weekly meetings; <b>80–20 rule</b> (80% routine/drudgery, 20% exciting). Be patient, persistent.</li>
+<li>Failure is normal – "research is a random walk"; you may change assumptions. Papers hide failed attempts (cooking analogy).</li>
+<li>Reproduce a published result as a starting point. Don't read paper line by line – be result-oriented.</li>
+<li>Peer review: research is not democratic; validate yourself → advisor → group → community (conferences, journals). Be the most critical examiner of your own work; honesty is fundamental.</li>
+<li>Quotes: JC Bose – "true laboratory is the mind"; Huxley – science is common sense, rigidly accurate in observation, merciless to fallacy in logic; Newton – shoulders of giants.</li></ul>`,
+q:[["Which is the Einstein quote used in Lecture 1?",["Imagination is the key to success","If we knew what we were doing, it would not be called research","Genius is 1% inspiration","God does not play dice"],1,"Used to show research explores unknown territory."],
+["The three learning paradigms in research are:",["Visual, auditory, kinaesthetic","Just-in-time, strategic, in-depth","Rote, logical, creative","Formal, informal, non-formal"],1,"PhD typically starts JIT and converges to in-depth."],
+["Pink's three drivers of intrinsic motivation are:",["Money, fame, power","Mastery, purpose, autonomy","Hard work, luck, talent","Skill, challenge, flow"],1,""],
+["The '80–20 rule' in research means:",["80% of papers get rejected","80% of time is routine work, 20% exciting","80% marks needed to pass","80% of results are wrong"],1,"Sachin Tendulkar nets analogy."],
+["Role of an advisor is best described as:",["Gives day-to-day instructions","Watches the steering, helps interpret results and gives perspective","Does experiments for the student","Only signs the thesis"],1,"Boat analogy – the student steers."],
+["Who validates research results first?",["Reviewers","The advisor","The researcher himself/herself","The public"],2,"Validate → advisor → group → community."],
+["'Research is a random walk' emphasises:",["Research is useless","Progress is non-linear with failures and detours","Experiments should be random","Reviewers are random"],1,""],
+["Why do published papers look neat and sequential?",["Authors lie","To spare readers the torture of the discovery path; failures aren't shown","Journals force it","Experiments always work"],1,"Cook analogy – 10 burnt dishes before the 11th."]]},
+
+{t:"Week 2 – Nature of Science & Creativity (Prof. Ananth)",s:"Lecture 5",
+n:`<h3>Ananth's lecture</h3><ul>
+<li><b>University idea:</b> Renaissance assumptions – material world is lawful; unity of knowledge; education leads to progress. Von Humboldt: research and teaching go together. Purpose of education = refinement of mind, not employment.</li>
+<li>Science seeks <b>unity</b>; industry thrives on <b>differences</b>.</li>
+<li>Popper/Kuhn: science evolves by idea mutation; selection rules – ignore ideas with no testable consequences, reject those that fail tests, prefer widest predictions. No theory can be <b>proved</b>, only <b>corroborated</b>.</li>
+<li>Carl Sagan: stay open to new ideas AND scrutinise ruthlessly.</li></ul>
+<div class="hot">⭐ <b>Stokes' quadrants:</b> Bohr = pure basic; <b>Pasteur = use-inspired basic</b>; Edison = pure applied; (fourth = to be avoided). Edison: "I found 9,999 ways not to make a bulb."</div>
+<ul><li>Types of research: academic (curiosity-driven, 99% routine, 1% inspired) vs developmental (application-driven, team, funding).</li>
+<li>Context-of-use inspired research – involve social scientists early.</li>
+<li>What scholars work on: unifying laws (rare), empirical data gathering (~40–60%), extending theories, synthesis + characterisation (nano), modelling & simulation, empirical correlations for design.</li>
+<li>Good researcher: prepared open mind, broad interests, hard work, desire for truth, <b>discrimination & aesthetics</b>, learn from mistakes, faith in scientific method.</li></ul>
+<div class="hot">⭐ <b>Split-brain (Sperry, Nobel 1981):</b> Left brain = logic, words, step-by-step. Right brain = intuition, images. <b>Creative stages:</b> Preparation (left) → Incubation (right) → Illumination (right) → Verification (left). Creativity = synergy of both.</div>
+<ul><li>Galileo → experimentation/verification. Einstein's light-bending test (Eddington).</li>
+<li><b>Magic garden</b> vs <b>idea factory</b> (Bell Labs) approaches. <b>Golden Triad</b> (IITM Research Park): students + faculty + industry R&D.</li>
+<li>Pasteur: chance favours the prepared mind. Advice: PhD problem is yours; avoid blaming advisor; explain research to a school kid; make many mental drafts; précis writing; value of work visible in abstract; take reviewer comments seriously ("so what?" story); don't plagiarise; take courses for scholarship.</li>
+<li>Ethics: results are ethically neutral, researcher is not. Swami Dayananda – non-violence as the universal value.</li></ul>`,
+q:[["In Stokes' diagram, 'use-inspired basic research' is the:",["Bohr quadrant","Pasteur quadrant","Edison quadrant","Einstein quadrant"],1,""],
+["According to Popper/Kuhn, a theory can only be:",["Proved","Corroborated","Ignored","Memorised"],1,"No theory can be proved."],
+["Correct order of the creative process:",["Illumination, preparation, incubation, verification","Preparation, incubation, illumination, verification","Incubation, preparation, verification, illumination","Verification, preparation, illumination, incubation"],1,""],
+["Split-brain experiments were done by:",["Kuhn","Roger Sperry","Gazzaniga alone","Popper"],1,"Nobel prize 1981."],
+["Science seeks _____ while industry thrives on _____ :",["Differences; unity","Unity; differences","Profit; loss","Theory; practice"],1,""],
+["Golden Triad at IITM Research Park comprises:",["Student, guide, examiner","Students, IIT faculty, industry R&D people","Government, industry, bank","Faculty, staff, alumni"],1,""],
+["Which is NOT a selection rule for scientific ideas?",["Ignore ideas lacking testable consequences","Reject ideas that fail tests","Prefer ideas with widest predictions","Prefer ideas supported by the most famous scientist"],3,""],
+["Purpose of education according to Ananth/Oakeshott:",["Employment","Refinement of mind","Placement","Earning degrees"],1,"Employment is a corollary."]]},
+
+{t:"Week 3 – Literature Survey",s:"Lectures 6–9",
+n:`<h3>Why & what</h3><ul>
+<li>Literature survey ≠ Googling. Google Scholar is the closest. Purpose: avoid duplication, find gaps, place work in context, know state of the art; done throughout research.</li>
+<li>Sources: open access, INDEST (MHRD, coordinated by IIT Delhi), library subscriptions, peer sharing (ResearchGate, Academia.edu). Primary (periodicals, conference proceedings, theses, standards, patents), secondary (reviews, handbooks, textbooks, abstracting services), tertiary (dictionaries, bibliographies).</li></ul>
+<div class="hot">⭐ <b>Identifiers:</b> ISBN = books; ISSN = journals/periodicals/newspapers; <b>DOI</b> = digital object identifier (persistent link, agency re-maps URL). UDC = library catalogue. Formats: <b>RIS, BibTeX (.bib)</b>.</div>
+<div class="hot">⭐ <b>Metrics:</b> <b>Impact factor</b> = how often journal articles are cited (not comparable across fields). <b>Citation index</b> = citations of an article ("citation classics"). <b>h-index</b>: author has h papers each cited ≥ h times.</div>
+<ul><li>Search strategies: <b>keyword</b> (use OR for synonyms – e.g. melt spinning OR rapid solidification), <b>backward chronological</b> (follow references of a paper), <b>forward chronological</b> (see who cites it – uses citation databases).</li>
+<li>Databases: <b>Web of Science</b> (Thomson Reuters/ISI) & <b>Scopus</b> (Elsevier) for citation data; INSPEC, COMPENDEX, PubMed (medical), MathSciNet, Chemical Abstracts.</li>
+<li>Publishers: Elsevier (ScienceDirect), Springer (SpringerLink) dominate; then Taylor & Francis, Nature, Maney; societies (APS, AIP, IEEE). RSS/content alerts push new articles to inbox. iMechanica = special interest site.</li>
+<li><b>Workflow (WoS):</b> search → sort (relevance, date, citations, usage count) → Add to Marked List → send to <b>EndNote Web</b> → keep "Unfiled" empty → create group → Export as <b>BibTeX</b> (rename .txt to .bib). <b>Scopus:</b> save to list → export BibTeX directly (Scopus.bib).</li>
+<li>Reference managers: <b>JabRef</b> (open source, Java, native format BibTeX, spreadsheet-like). JabRef → XML for MS Word.</li>
+<li>Typical counts: article 10–30 references; thesis ~100+.</li></ul>`,
+q:[["ISSN is used to identify:",["Books","Journals/periodicals","Authors","Patents"],1,"ISBN is for books."],
+["h-index of n means:",["n papers cited n times or more","n citations total","n journals published","Average citation n"],0,""],
+["Which search follows the reference list of a paper to older work?",["Forward chronological","Backward chronological","Keyword","Boolean"],1,""],
+["Forward chronological search needs:",["Citation databases like WoS/Scopus","Only a library catalogue","Google only","ISBN"],0,"To see who cites a paper."],
+["Reference manager recommended in the lectures:",["Mendeley only","JabRef","Zotero","Notepad"],1,"Open-source, BibTeX native."],
+["From Web of Science, BibTeX export required going through:",["JabRef","EndNote Web","Scopus","Word"],1,"Via End Note portal; Scopus exports BibTeX directly."],
+["DOI stands for:",["Document Origin Index","Digital Object Identifier","Digital Online Index","Data of Information"],1,""],
+["Why combine keywords with OR in a search?",["To get the union of synonymous topics","To get fewer results","To sort by date","To remove duplicates"],0,"e.g. melt spinning OR rapid solidification."],
+["Journal impact factor measures:",["Number of pages","How often its articles are cited","Number of editors","Subscription cost"],1,"Not comparable across fields."]]},
+
+{t:"Week 4 – Writing Up, Citations & Technical Writing",s:"Lectures 10–12, 20",
+n:`<h3>LaTeX + BibTeX</h3><ul>
+<li>Keep <b>.bib in the same folder</b> as .tex; each entry has a unique BibTeX key (JabRef can auto-generate).</li>
+<li>Commands: <code>\\cite{key}</code>, <code>\\bibliography{file}</code> (no extension), <code>\\bibliographystyle{unsrt}</code> (numbered in order of citation).</li>
+<li>⭐ <b>Compile order:</b> LaTeX → BibTeX → LaTeX → LaTeX (→ PDFLaTeX). Editors: TeXmaker, TeXworks, MiKTeX.</li></ul>
+<h3>MS Word</h3><ul>
+<li>JabRef: export .bib → <b>Microsoft 2007 XML</b>. Word: References → Manage Sources → Browse XML → Copy → Insert Citation → Bibliography. Delete unused sources, Update Citations.</li>
+<li>Endnote method (manual): References → Insert Endnote; change Roman → Arabic numbering; Style Inspector to remove superscript; delete Endnote Separator in Draft view.</li></ul>
+<h3>Technical writing (Lecture 20)</h3><ul>
+<li>Book: <b>The Craft of Scientific Writing – Michael Alley</b>. Purpose: <b>inform and persuade, efficiently</b>. Reason: get credit, share new results, influence policy.</li>
+<li>Different from novels/newspapers: no suspense – <b>abstract gives all results away</b> (written for a reader who hasn't read the paper; avoid undefined abbreviations).</li>
+<li>Structure: <b>Beginning</b> – title, abstract, introduction (what, why important, compare with prior work/background). <b>Middle</b> – experimental details (reproducible), results, discussion. <b>End</b> – conclusions (+ future perspective), references.</li>
+<li>⭐ <b>Result = statement of fact (no controversy). Discussion = argument/interpretation (opinion with scientific basis).</b></li>
+<li>Middle strategies: chronological, spatial, following a variable. Language: short clear sentences; avoid "it is obvious". Choose illustration to convey point efficiently.</li>
+<li>Journal process: submit → peer review by independent experts → revise → publish. First drafts of first papers are usually poor – expect many iterations.</li></ul>`,
+q:[["Correct compile sequence for BibTeX references in LaTeX:",["BibTeX, LaTeX, LaTeX","LaTeX, BibTeX, LaTeX, LaTeX","PDFLaTeX only","LaTeX, LaTeX, BibTeX"],1,""],
+["'unsrt' bibliography style gives:",["Alphabetical order","Numbered in order of citation","Year order","No order"],1,""],
+["For MS Word sources, JabRef exports the .bib as:",["PDF","Microsoft 2007 XML","RIS","CSV"],1,""],
+["In a journal paper, the abstract should:",["Hide the main result until the conclusion","Give away all major results","Contain only the aim","Contain only references"],1,"Efficiency, not suspense."],
+["A 'result' differs from a 'discussion' because a result is:",["An argument","A statement of fact","A hypothesis","A reference"],1,""],
+["Which book on scientific writing is recommended?",["Elements of Style","The Craft of Scientific Writing – Alley","Writing for Science","Publish or Perish"],1,""],
+["Which is NOT part of the beginning of a paper?",["Title","Abstract","Introduction","Experimental results"],3,"Results are in the middle."],
+["Purpose of technical writing is to:",["Entertain","Inform and persuade efficiently","Impress with vocabulary","Hide failures"],1,""]]},
+
+{t:"Week 5 – Experimental Skills & Lab Safety",s:"Lectures 13, 18",
+n:`<h3>Experimental skills (Prof. Prathap)</h3><ul>
+<li>Experiments are "supreme" – they validate theory, <b>provided they are run correctly</b>. Experimental skill = ripping apart every step and asking "what can go wrong?"</li>
+<li>⭐ <b>Temperature:</b> furnace display shows the thermocouple location, not your sample (tube furnace; gas flow cools; 5–10 cm gap; 750 vs 800 °C). Fix: add a second thermocouple just above the sample, then raise set-point (e.g. 840 °C to get 800 °C). Calibrate vs a standard.</li>
+<li><b>Pressure:</b> sensor location, clogging/dirt.</li>
+<li>⭐ <b>Humidity:</b> humidifier ≠ 100% RH automatically; carrying capacity rises with temperature. Verify by passing gas through a <b>desiccant box</b> and weighing gain (grams water per litre gas). Keep the line <b>heat-traced</b> so vapour doesn't condense; the gas must be vapour not liquid.</li>
+<li>⭐ <b>Current/Voltage:</b> cross-check display with a <b>clamp-on meter</b> (non-invasive). <b>Two-probe</b> measures R = Rc + Rs + Rc (contact resistance error 20–30%); <b>four-probe</b> puts voltage leads inside – negligible current in voltage circuit, so contact resistance eliminated → correct resistivity.</li></ul>
+<h3>Lab safety (Lecture 18)</h3><ul>
+<li>Safety is culture. Research labs differ from industry – changing experiments, so you must identify risks yourself.</li>
+<li>⭐ <b>Five common hazards:</b> chemicals, electricity, water, gas bottles, heat sources.</li>
+<li>Apparel: <b>lab coat</b>, <b>nitrile gloves</b> (check chemical compatibility), <b>safety glasses</b> – ordinary spectacles are NOT safety glasses (incomplete coverage + not shatter-proof). Face shields, dust masks/filter respirators, thermal gloves, acid-resistant gloves.</li>
+<li>⭐ <b>Gas bottles:</b> pressurised; regulator makes the neck vulnerable – <b>chain to wall at ~2/3 to 3/4 height</b>; same for trolleys.</li></ul>`,
+q:[["A furnace display of 800 °C actually shows the temperature at:",["The sample","The thermocouple location","The tube end","Room"],1,"Sample may be ~750 °C."],
+["Best fix to know the real sample temperature:",["Trust the display","Add a second thermocouple just above the sample","Reduce gas flow to zero","Use a thicker tube"],1,""],
+["Four-probe measurement removes:",["Sample resistance","Contact resistance error","Current","Temperature effects"],1,""],
+["In a two-probe measurement the measured R equals:",["Rs only","Rc + Rs + Rc","Rc only","Rs − Rc"],1,""],
+["To verify humidifier output the lecture used:",["Hygrometer only","A desiccant box weighed before/after","pH paper","Thermocouple"],1,""],
+["Why heat-trace the line from humidifier to setup?",["Prevent condensation of vapour to liquid","Increase pressure","Reduce flow","Save power"],0,""],
+["A clamp-on meter is useful because it:",["Measures voltage precisely","Cross-checks current without breaking the circuit","Measures resistance","Measures humidity"],1,""],
+["Gas cylinders with regulators should be chained at about:",["Base","One-third height","Two-thirds to three-fourths height","Top of the valve only"],2,""],
+["Normal spectacles are not safety glasses because:",["Heavy","Incomplete coverage and not shatter-proof","Too costly","Not transparent"],1,""],
+["Which is NOT one of the five lab hazards listed?",["Chemicals","Noise","Electricity","Heat source"],1,"Chemicals, electricity, water, gas bottles, heat."]]},
+
+{t:"Week 6 – Data Analysis (+ R)",s:"Lectures 14–15",
+n:`<h3>Concepts</h3><ul>
+<li>Data analysis = extracting useful information from observations. Purposes: parameter estimation, model development/prediction, feature extraction, classification, hypothesis testing, fault detection/process monitoring.</li>
+<li>Types: exploratory vs confirmatory; quantitative vs qualitative; descriptive vs inferential; predictive vs prescriptive.</li>
+<li>⭐ <b>Data generating process (DGP)</b> = process + sensor + experiment. <b>Deterministic</b> (a mathematical function fits exactly) vs <b>stochastic/random</b> (uncertainty). Real processes are mostly mixed; assumption must be justified because theory/interpretation depend on it.</li>
+<li>⭐ <b>Population vs sample; truth vs estimate; statistic/estimator; ensemble vs sample average.</b> Sample mean is an estimator of true mean and is itself random.</li>
+<li>⭐ <b>Bias</b> (systematic error; E[estimate] ≠ truth) = <b>accuracy</b>. <b>Variability</b> = <b>precision</b>. Want errors to shrink as n → ∞.</li>
+<li>⭐ <b>Procedure:</b> preliminary questions → visualise, quality check (outliers, missing values), pre-process (filter noise, sync time stamps) → choose domain (time/frequency), dimensionality reduction (PCA) → choose tool (mean vs median for outliers) → assess (hypothesis test, confidence regions, cross-validation, AIC/BIC). Iterative; use domain knowledge. <b>80/20: 80% of time on pre-processing.</b></li>
+<li>⭐ <b>Anscombe's quartet:</b> four datasets with identical mean, variance, correlation, regression but very different plots → always visualise first.</li>
+<li>Keep part of data for <b>cross-validation</b>. Always report errors/confidence intervals; p-value low → null must go.</li></ul>
+<h3>R commands</h3><ul><li><code>data(Anscombe)</code>, <code>names()</code>, <code>summary()</code>, <code>cor(x,y)</code>, <code>plot()</code>, <code>hist()</code>, <code>t.test(x,y)</code> (difference of means; Welch by default, assumes ~Gaussian), RStudio GUI, <code>?datasets</code>.</li>
+<li>Beavers data: body temperature; t.test gave very low p → means differ. CO₂ series: trend + oscillation → mixed deterministic + stochastic.</li></ul>`,
+q:[["Bias in an estimator relates to:",["Precision","Accuracy","Sample size","Noise"],1,"Variability = precision."],
+["Anscombe's data sets teach us to:",["Ignore plots","Always visualise data before analysis","Use only regression","Remove all outliers"],1,""],
+["The DGP includes:",["Only the physical process","Process + sensor + experimental procedure","Only the sensor","Only software"],1,""],
+["In R, comparing means of two samples uses:",["lm()","t.test()","hist()","cor()"],1,""],
+["Low p-value means:",["Accept the null","Reject the null hypothesis","Data is wrong","Increase sample"],1,"'If p is low, the null must go.'"],
+["Roughly what share of analysis time goes to pre-processing (golden rule)?",["10%","50%","80%","95%"],2,""],
+["For data with outliers, a robust estimator of centre is:",["Sample mean","Sample median","Sum","Variance"],1,""],
+["Sample mean is:",["The true mean","A statistic/estimator of the true mean","Always unbiased zero","Constant across samples"],1,""],
+["Why keep a part of the data aside?",["To waste","Cross-validation of model/classifier","For printing","To change the model"],1,""]]},
+
+{t:"Week 7 – Modelling Skills",s:"Lectures 16–17",
+n:`<h3>Concepts</h3><ul>
+<li>Model = mathematical/quantitative abstraction of a process. Uses: prediction, classification, fault detection, simulation, control, design/optimisation.</li>
+<li>⭐ <b>First-principles (white box)</b> – conservation laws (mass, energy, momentum): physical, good over wide range, but complex (non-linear ODE/PDE). <b>Empirical (black box)</b> – data-driven, flexible, simple, but "as good as your data". <b>Gray box</b> = empirical + prior knowledge.</li>
+<li>Liquid-level tank example: steady state outflow ∝ √h; material balance gives non-linear first-order ODE; linearise by Taylor series (deviation variables); discrete-time difference equation y(k)=a·y(k−1)+b·u(k−1)+ε (gray box).</li>
+<li>Empirical models: <b>time-series</b> (stochastic, no/unknown causes) vs <b>input–output</b> (causal). Most real models mix both.</li>
+<li>⭐ <b>Systematic procedure:</b> data acquisition → pre-processing/visualisation → (non-parametric analysis for structure) → parameter estimation → <b>model assessment</b> (validate on fresh data, parameter errors, over-fitting). Iterative.</li>
+<li>⭐ <b>Excitation:</b> data must be informative. Single-frequency sinusoid makes the regression matrix singular (3 parameters, only 2 estimable); need ≥ 2 frequencies.</li>
+<li>⭐ <b>Noise & SNR:</b> error in estimates ∝ 1/√SNR (SNR 100 → 10 gave ~3.2× larger std error). More data: errors ∝ 1/√n.</li>
+<li>⭐ <b>Over-fitting:</b> fitting noise (local fluctuations) as trend – e.g. 99th-degree polynomial. Symptoms: large errors in parameter estimates, poor prediction on fresh data. Use training/test split; plot sum-of-squares vs order (elbow); keep model simple.</li></ul>
+<h3>R (modelling)</h3><ul><li><code>lm(y ~ x)</code> linear regression (intercept implicit; <code>-1</code> removes it); <code>lm(y ~ x + I(x^2))</code> – <code>I()</code> needed for quadratic term; <code>summary()</code> shows estimate, std error, t, p, stars; <code>TSA::periodogram(residuals)</code> finds oscillation frequency; <code>predict()</code> on test data frame.</li>
+<li>CO₂ dataset: fit linear → quadratic trend; residual oscillations; periodogram shows peak + harmonic.</li></ul>`,
+q:[["A model using conservation laws is a ______ model.",["Black box","White box","Gray box","Statistical only"],1,""],
+["Gray-box model means:",["No data used","Empirical model with prior process knowledge","Only theory","Random model"],1,""],
+["Over-fitting is evidenced by:",["Small parameter errors","Large parameter errors and poor prediction on new data","Perfect SNR","Lower order"],1,""],
+["With a single-frequency sinusoidal input, a 3-parameter dynamic model:",["Is fully identifiable","Cannot be fully estimated (singular matrix)","Gets zero error","Becomes linear"],1,"Need ≥ two frequencies."],
+["If SNR falls by a factor of 10, parameter std. errors rise by about:",["10×","√10 ≈ 3.2×","1/10","No change"],1,""],
+["In R, a quadratic regressor must be written as:",["x^2","I(x^2)","x2","sqr(x)"],1,""],
+["Time-series models are suited to:",["Deterministic processes with known causes","Stochastic processes with unknown/random causes","Only steady-state","Only control"],1,""],
+["Which is a limitation of empirical models?",["Complex to solve","Quality depends on data quality and extrapolation is questionable","Cannot predict","Needs conservation laws"],1,""],
+["Liquid-level steady-state outflow is proportional to:",["h","√h","h²","1/h"],1,"Bernoulli."]]},
+
+{t:"Week 8 – Technical Presentation + Creativity (Part 1)",s:"Lecture 19, Lectures 21–22",
+n:`<h3>Technical presentation (50-min talk, ~35 slides)</h3><ul>
+<li>Journal paper vs talk: paper is one-time, rigid structure, <b>peer-reviewed</b>, non-interactive, no audience control. Talk is an event, repeated, flexible, <b>interactive</b>, specific audience.</li>
+<li>Two constraints: <b>audience</b> (background and why they're listening) and <b>duration</b>. Rule of thumb: <b>a slide a minute</b>. Be able to adjust duration (5/20/50 min).</li>
+<li>Start with an <b>outline</b>; flash it repeatedly; end with ONE summary slide.</li>
+<li>Connect: avoid busy slides, avoid excess special effects/fonts, don't read from slide, face the audience; use short pointers.</li>
+<li>⭐ <b>Illustrations:</b> table, graph, photograph, drawing, schematic. Table – consistent units & significant digits; graph – axis labels, units, values, legend, caption; photograph – no extraneous objects, scale; drawing simplifies; <b>always include scale</b> (Taj Mahal with people; nanotube scale bar). Choose by what point is to be made (maximum → graph, not table).</li></ul>
+<h3>Creativity (Prof. Balaji)</h3><ul>
+<li>PhD joke curve: know more and more about less and less. Fully professional researcher: peers listen to you internationally; mastery of analytical, numerical, experimental methods; choose a line of investigation for 5–10 years; communicate; guide students.</li>
+<li>⭐ <b>Sternberg's triarchic theory:</b> <b>Analytical</b> (college, exams, one answer), <b>Synthetic</b> (combine knowledge, projects, research), <b>Practical</b> (adapt to everyday needs, sell ideas to funding agencies/editors) – only analytical is taught.</li>
+<li>Knowledge is needed to recognise what is new and design experiments. Creative people question conventional wisdom, persistent, stubborn.</li>
+<li>⭐ <b>10,000-hour rule:</b> proposed by <b>Herbert Simon</b>; popularised by Malcolm Gladwell (<i>Outliers</i>, 2008); Anders Ericsson (deliberate practice). Hard work > innate genius.</li></ul>`,
+q:[["A slide-per-minute rule applies to:",["Journal writing","Technical talks","Posters","Thesis"],1,""],
+["A technical presentation differs from a journal paper because it is:",["Peer-reviewed","Interactive and flexible in structure","Permanent record","Non-interactive"],1,""],
+["A table is a poor choice when you want to show:",["Many sample values","A maximum/trend in the data","Exact numbers","Units"],1,"Graph shows a maximum."],
+["Why include a scale in photos?",["Decoration","Audience needs a sense of size","Copyright","Colour"],1,""],
+["Sternberg's three types of intelligence:",["Verbal, spatial, logical","Analytical, synthetic, practical","Emotional, social, physical","Fluid, crystallised, creative"],1,""],
+["The 10,000-hour rule was first proposed by:",["Gladwell","Herbert Simon","Sperry","Medawar"],1,"Gladwell popularised it."],
+["Which should be avoided in presentations?",["Outline slide","Reading text from slides and busy slides","A summary slide","Graph labels"],1,""],
+["Which intelligence is NOT formally taught but crucial (selling ideas to funding agencies)?",["Analytical","Synthetic","Practical","Rote"],2,""]]},
+
+{t:"Week 9 – Creativity (Part 2 & 3)",s:"Lectures 22–23",
+n:`<ul>
+<li>⭐ <b>Motivation:</b> extrinsic (money, praise) vs <b>intrinsic</b> (own goals, joy of solving). Environment: Ramanujan did great work in adversity.</li>
+<li>⭐ <b>Stress – Yerkes–Dodson curve (1908, rats):</b> performance peaks at <b>eustress</b> (optimal stress); too little (hypo) or too much (distress) lowers it.</li>
+<li>⭐ <b>Medawar zone (Sir Peter Medawar, Nobel 1960):</b> payoff vs problem difficulty – choose problems neither too easy nor too hard.</li>
+<li>Creativity occurs through intuitive flashes ("darshan") – e.g. <b>Max Planck's black-body "−1"</b> (led to quantum mechanics, 17 yrs to Nobel). Record ideas, then verify.</li>
+<li>Journal papers hide the failures/frustration. Research progress follows a <b>log-sigmoidal</b> curve – slow start, rapid middle, saturation.</li>
+<li><b>Reductio ad absurdum</b> (e.g. √2 irrational). "Dog bites man vs man bites dog" – surprise readers with non-obvious findings.</li>
+<li>⭐ <b>Flow (Csikszentmihalyi):</b> flow channel where <b>challenge matches skill</b>; high skill + low challenge = boredom; low skill + high challenge = anxiety (tennis example).</li>
+<li>⭐ <b>Creative examples:</b> Velcro (<b>George de Mestral</b>, cockleburs); <b>Post-it</b> (Art Fry, Spencer Silver's weak adhesive, 3M, 1974); Japanese <b>Shinkansen nose cone modelled on kingfisher beak</b>.</li>
+<li>Young scientists are fearless; change field every ~10 years (<b>Chandrasekhar</b>: white dwarfs → stellar dynamics → … → black holes → colliding gravitational waves).</li>
+<li>Design checklist: asymptotes, scale analysis, analogy, nature. <b>Ant colony optimisation</b> (pheromone, shortest path, TSP); <b>Genetic algorithm</b> (selection, crossover, mutation); chip-heating minimax example: CFD → ANN surrogate → GA.</li>
+<li>Improve creativity: puzzles, hobbies, journal, read widely, talk to others, large library of ideas. Take-home: problems can't be solved at the same level of thinking that created them.</li></ul>`,
+q:[["Yerkes–Dodson curve relates:",["Skill and challenge","Performance and pressure/stress","Cost and quality","Age and intelligence"],1,""],
+["Medawar zone suggests choosing a problem that is:",["Very easy","Very hard","Of intermediate difficulty with high payoff","Trivial"],2,""],
+["Flow occurs when:",["Skill is high and challenge low","Challenge matches skill","Skill is low and challenge high","No challenge"],1,""],
+["Shinkansen noise reduction idea came from:",["Eagle wing","Kingfisher beak","Owl feathers","Whale fin"],1,"Bio-inspired design."],
+["Post-it notes developed at:",["Apple","3M","GE","Sony"],1,"Art Fry / Spencer Silver."],
+["Velcro was invented by:",["Art Fry","George de Mestral","Edison","Spencer Silver"],1,""],
+["Chandrasekhar's approach illustrates:",["Staying in one field","Changing fields about every ten years","Avoiding maths","Industry work"],1,""],
+["Ant colony optimisation uses:",["Pheromone concentration","Chromosomes","Neural weights","Fourier series"],0,"Genetic algorithm uses chromosomes."],
+["Max Planck's famous insight was adding:",["+1 in the denominator","−1 in the exponential denominator of black-body law","A square root","A π factor"],1,""]]},
+
+{t:"Week 10 – Research Ethics & IPR",s:"Lectures 24–26",
+n:`<h3>Ethics (Prof. Sreekumar)</h3><ul>
+<li>Ethics from Greek <i>ethos</i> = character. Research rests on <b>public trust</b>; researcher must be responsible (avoid harm: intentional, negligent, reckless; promote public welfare).</li>
+<li>⭐ <b>Case: Hwang Woo-suk (South Korea, 2004)</b> – claimed human embryo cloning / stem cells; fabricated data; coerced junior researchers' eggs; fired 2006, charged with fraud/embezzlement.</li>
+<li>Issues: plagiarism, fabrication, breach of confidentiality, discrimination, negligence, authorship (credit by substantial contribution; acknowledge minor help), unfounded charges, conflicts, treatment of human/animal subjects. Causes: pressure to publish, self-interest, ignorance, poor supervision.</li>
+<li>⭐ <b>Milestones:</b> <b>Nuremberg Code (1947–49)</b> – voluntary consent after Nazi experiments; <b>Tuskegee Syphilis Study (1932–72, US, Black men untreated, no consent)</b>; <b>Declaration of Helsinki (1964)</b> – risk–benefit assessment, privacy; <b>Belmont Report (1979)</b>; <b>Animal Welfare Act (US)</b>; ethics committees / institutional review boards.</li>
+<li>Human subjects: informed consent, right to withdraw, confidentiality, security/anonymisation, safety. Animals: justification, species choice, minimise harm. Be risk-aware, not risk-averse.</li></ul>
+<h3>IPR (Prof. Feroz Ali)</h3><ul>
+<li>IP = creations of the mind; IPR = enforceable legal rights over them. Rights give <b>exclusivity</b> (right to stop others); violation = <b>infringement</b> (trespass). IP protects <b>applications/expressions</b> of ideas, not ideas themselves.</li>
+<li>⭐ <b>Traits:</b> enforceable, intangible, registrable, easily replicated, effort to create, commercial value; <b>non-rivalrous & non-excludable</b> (public-good-like).</li>
+<li>⭐ <b>Types & terms:</b> <b>Patent</b> – inventions; <b>20 years from filing</b> (TRIPS/WTO; was 14 earlier in India); right to make, use, sell, offer for sale, import; <b>claims</b> define boundaries; examined (first examination report, prosecution); under Patents Act 1970; method of medical treatment excluded (Sec 3). <b>Copyright</b> – literary/artistic works, software; India: <b>life of author + 60 years</b>; arises on creation (Berne) – registration optional. <b>Trademark</b> – words/symbols; registered for <b>10 years, renewable</b> (unlimited life); passing-off protects unregistered use; Trade Marks Act 1999. <b>Design</b> – aesthetic, non-functional (weakest right). <b>GI</b> – geographical origin (Darjeeling tea). <b>Trade secret</b> – lasts while kept confidential.</li>
+<li>Limited-life IP = patents, copyrights; unlimited-life IP = trademarks, trade secrets. WIPO = UN body for IP; TRIPS under WTO. Patent specification = description (background/prior art, invention) ending in claims.</li></ul>`,
+q:[["The word 'ethics' comes from Greek 'ethos' meaning:",["Law","Character","Duty","Truth"],1,""],
+["Hwang Woo-suk case is associated with:",["Plagiarism of a book","Fabricated stem-cell cloning data","Animal cruelty only","Patent theft"],1,""],
+["Which code emphasised voluntary consent after Nazi experiments?",["Belmont","Nuremberg Code","Helsinki","Tuskegee"],1,""],
+["Tuskegee study (1932–72) was a case of:",["Animal testing","Untreated syphilis in Black men without consent","Drug approval","Data sharing"],1,""],
+["Patent term (TRIPS) is:",["10 years","14 years","20 years from filing","Life + 60"],2,""],
+["Copyright term in India is:",["20 years","Life of author + 60 years","10 years","Unlimited"],1,""],
+["Which IP right can last indefinitely if renewed?",["Patent","Copyright","Trademark","Utility model"],2,""],
+["The boundary of patent protection is defined by:",["Abstract","Claims","Title","Drawings"],1,""],
+["Non-rivalrous means:",["Use by one doesn't reduce use by others","Competitors can't copy","Free to all","Only one owner"],0,""],
+["Designs protect:",["Functional features","Aesthetic, non-functional appearance","Ideas","Secrets"],1,""],
+["Violation of an IP right is called:",["Plagiarism","Infringement","Piracy only","Fraud"],1,""]]},
+
+{t:"Week 11 – Design of Experiments (Statistics basics → RSM)",s:"Lectures 27–31",
+n:`<h3>Statistics building blocks</h3><ul>
+<li>Books: Montgomery & Runger (Applied Statistics & Probability for Engineers); Montgomery (Design & Analysis of Experiments); Myers et al.; Ogunnaike.</li>
+<li>Observation y = η (true) + ε (random error). Repeats show scatter. Screening experiments first, then optimise.</li>
+<li><b>Normal distribution N(μ,σ²)</b>: ±1σ = 68%, ±2σ ≈ 95%, ±3σ ≈ 99%; standardise Z=(X−μ)/σ.</li>
+<li>⭐ Sample mean x̄=Σx/n; sample variance s²=Σ(x−x̄)²/<b>(n−1)</b>; n−1 = degrees of freedom. E[x̄]=μ; <b>Var(x̄)=σ²/n</b>. Sampling must be independent and equal-probability.</li>
+<li>⭐ <b>Central Limit Theorem:</b> x̄ tends to normal for large n (≳30) even if population isn't normal.</li>
+<li>⭐ <b>Confidence interval (σ known):</b> x̄ ± z<sub>α/2</sub>·σ/√n; 95% means α=0.05 (z≈1.96). Broad interval = more confidence, less precision.</li>
+<li><b>t-distribution</b> (small n, σ unknown): t=(x̄−μ)/(s/√n), df=n−1. <b>Chi-square</b>: (n−1)s²/σ² for variance CI. ⭐ <b>F-distribution</b> = ratio of variances (scaled chi-squares), two df (numerator, denominator).</li>
+<li>⭐ <b>Hypothesis testing:</b> H₀ vs H₁. <b>Type I</b> = reject a true H₀ (long-run rate α); <b>Type II</b> = fail to reject a false H₀. Court: convicting an innocent person is like a Type I error. A <b>p-value</b> is the probability, assuming H₀ and the model assumptions, of data at least this unusual; it is not the probability H₀ is true.</li></ul>
+<h3>ANOVA & factorial designs</h3><ul>
+<li>One factor: compare variance between treatments with variance within (error). MS=SS/df; ⭐ <b>F = MS<sub>treatment</sub>/MS<sub>error</sub></b>; large F → significant. df treatments = a−1; error = a(n−1).</li>
+<li>⭐ <b>Randomise run order</b> (photocopier toner example) to spread uncontrolled effects.</li>
+<li>⭐ <b>2^k factorial</b> (k factors at 2 levels): fewer runs than one-factor-at-a-time, detects <b>interactions</b>, handles qualitative + quantitative factors. <b>Interaction plot:</b> parallel lines = no interaction; crossing/converging = interaction (cricket bat × drink example). Two-factor ANOVA includes AB interaction, df (a−1)(b−1).</li></ul>
+<h3>Regression & RSM</h3><ul>
+<li>y=Xβ+ε; <b>β̂ = (X′X)⁻¹X′y</b> (least squares). p=k+1 parameters, need n>k+1 runs. SSE = SST − SSR; df: regression k, error n−k−1.</li>
+<li>⭐ <b>R²</b> = fraction of variability explained; adding terms always raises R²; <b>adjusted R²</b> = 1 − [SSE/(n−p)]/[SST/(n−1)] penalises useless terms.</li>
+<li>⭐ <b>Second-order model:</b> β₀+Σβᵢxᵢ+Σβᵢⱼxᵢxⱼ+Σβᵢᵢxᵢ²; needed for curvature (peaks/valleys).</li>
+<li>⭐ <b>Central Composite Design (CCD):</b> 2^k factorial + 2k axial points + centre points. Centre points → repeats and test curvature (β₁₁+β₂₂); axial points → individual pure quadratic effects; they don't help interactions.</li>
+<li>⭐ <b>Response Surface Methodology:</b> method of <b>steepest ascent</b> to move quickly towards optimum. Stationary point <b>x<sub>s</sub> = −½ B⁻¹ b</b>. <b>Eigenvalues of B:</b> all positive → minimum; all negative → maximum; mixed → saddle.</li></ul>`,
+q:[["Sample variance uses the divisor:",["n","n−1","n+1","n²"],1,""],
+["Variance of the sample mean is:",["σ²","σ²/n","σ/n","nσ²"],1,""],
+["CLT states that for large n the sampling distribution of x̄ is:",["Uniform","Approximately normal","Exponential","Binomial"],1,""],
+["Type I error means:",["Accept a false H₀","Reject a true H₀","Accept a true H₀","Reject a false H₀"],1,"The more serious error."],
+["The F statistic in one-factor ANOVA is:",["MS_error/MS_treatment","MS_treatment/MS_error","SS_treatment/SS_error","df ratio"],1,""],
+["Parallel lines in an interaction plot indicate:",["Strong interaction","No interaction","Error","Curvature"],1,""],
+["Why randomise the order of runs?",["To save time","To distribute uncontrolled effects across settings","To improve R²","To reduce factors"],1,""],
+["Least-squares parameter estimate:",["(XX′)y","(X′X)⁻¹X′y","X⁻¹y","X′y"],1,""],
+["Adjusted R² is used because R² always:",["Decreases with more terms","Increases when terms are added","Equals 1","Is negative"],1,""],
+["Centre points in a CCD help to:",["Estimate interactions","Detect curvature and give repeats","Remove noise","Change levels"],1,""],
+["If all eigenvalues of matrix B are positive, the stationary point is a:",["Maximum","Minimum","Saddle","Undefined"],1,""],
+["Stationary point in RSM equals:",["−½B⁻¹b","B·b","b/B","2Bb"],0,""],
+["For 3 factors at 2 levels, number of runs in a full factorial:",["6","8","9","12"],1,"2³=8."]]},
+
+{t:"Week 12 – Department Modules, Scholars' Discussion & Mock Test",s:"Lectures 32–48 + revision",
+n:`<h3>Department modules – recurring themes</h3><ul>
+<li><b>Meeting the guide:</b> frequent at start (weekly/daily), less frequent later; peer interaction is equally important; students should become independent.</li>
+<li><b>Challenge of transition:</b> course-based → open-ended research; need self-motivation, time management, ownership, questioning papers, lab skills, strong maths/physics basics.</li>
+<li><b>Success in research:</b> publications in good journals, conference presentations, ability to formulate a problem independently, impact on industry/society; students who create or solve long-standing problems.</li>
+<li><b>Jobs after MS/PhD:</b> academia (largest employer), R&D in industry, post-doc, start-ups; interdisciplinary skills matter.</li></ul>
+<table><tr><th>Dept (speaker)</th><th>Key point to remember</th></tr>
+<tr><td>Applied Mechanics (Mahesh)</td><td>Fluid, solid, bio mechanics; research is open-ended</td></tr>
+<tr><td>Chemical Eng (Deshpande, Renganathan)</td><td>Process intensification, multiphase, microfluidics; fundamentals tested in selection</td></tr>
+<tr><td>Civil (Gettu)</td><td>Structural, geotech, environmental, water, transportation; "How will your thesis make the world better?"</td></tr>
+<tr><td>CSE (Kamakoti)</td><td>IoT, data science, ML, security, multicore; learn discrete & concrete maths; work in a team</td></tr>
+<tr><td>Engg Design (Srikanth)</td><td>Interdisciplinary; learn the <i>process</i> of solving problems; keep the big picture</td></tr>
+<tr><td>HSS (Rajesh Kumar)</td><td>Intra-/multi-disciplinary humanities; industry needs social scientists</td></tr>
+<tr><td>Mechanical (Babu Viswanath)</td><td>Thermal, design, manufacturing; research = long disappointment + brief elation</td></tr>
+<tr><td>MME (Murty)</td><td>Casting/forming/welding to modern materials; enjoy, think research 24/7</td></tr>
+<tr><td>Ocean (Anantha Subramanian)</td><td>Ships, offshore, wave energy; quality over numbers</td></tr>
+<tr><td>Management (Usha Mohan)</td><td>6 functional areas; passion + translate business need to abstract and back</td></tr>
+<tr><td>Aerospace (Chakravarthy)</td><td>Aerodynamics, structures, propulsion; "follow your heart"; manage 168 hours/week</td></tr>
+<tr><td>Biotech (Gummadi)</td><td>Bioprocess, biosimilars, computational biology; team player, maintain lab records</td></tr>
+<tr><td>Chemistry (Viswanathan)</td><td>Energy, materials, environment; DFT; embrace mathematics as language</td></tr>
+<tr><td>EE (Deepa)</td><td>Power, comm, VLSI, photonics; strengthen maths & physics</td></tr>
+<tr><td>Maths (Arindama Singh)</td><td>Geometry, analysis, algebra + computing-related areas; play with maths</td></tr>
+<tr><td>Physics (Nirmala)</td><td>Condensed matter, nanoscience; hard work, post-doc experience</td></tr></table>
+<div class="hot">Final tip: for NPTEL exams, revise the ⭐ boxes, formulas (CI, F, β̂, x_s), IPR terms (20 yrs / life+60 / 10 yrs), and the names/quotes (Einstein, Sternberg, Simon, Medawar, Yerkes–Dodson, Csikszentmihalyi).</div>`,
+q:[["Which of these is usually the largest employer of PhD graduates (per the Applied Mechanics/Civil talks)?",["Banks","Academia","Retail","Defence only"],1,""],
+["The scholars advised that one should:",["Avoid failure at all costs","Accept and adapt to failures","Never change topics","Not meet peers"],1,""],
+["Research differs from coursework mainly because it is:",["Structured and time-bound","Open-ended and self-directed","Exam based","Teacher dictated"],1,""],
+["Which department speaker stressed discrete and concrete mathematics?",["Kamakoti (CSE)","Murty (MME)","Gettu (Civil)","Chakravarthy"],0,""],
+["'Follow your heart' was advice from:",["Aerospace (Chakravarthy)","Chemistry","Physics","EE"],0,""],
+["A key quality emphasised by management faculty for PhD aspirants was:",["Passion and commitment","Only maths","Only coding","Money"],0,""]],mock:true}
+];
+const nav=document.getElementById('nav'),main=document.getElementById('main');
+let cur=0,practiceWeek=0,section='study';
+const done=new Set(JSON.parse(localStorage.getItem('rm_done')||'[]'));
+const sections=[['study','📖 Study Notes'],['important','⭐ High-yield Topics'],['practice','🎯 MCQ Practice'],['cheat','⚡ Cheat Sheet']];
+const important=[
+ ['Research vs coursework','Research asks a new question and works toward an answer that is not known in advance. Example: a class follows a recipe; research tests whether the recipe can be improved.'],
+ ['Literature review','Map what is known, compare evidence, and find a useful gap. It is a process that continues as the project grows, not a pile of summaries.'],
+ ['Research integrity','Keep records, report results honestly, credit sources, and correct errors. A result that looks good is never a reason to hide inconvenient data.'],
+ ['Experimental uncertainty','A displayed instrument value is not automatically the true value at the sample. Calibrate, repeat, control conditions, and check each measurement step.'],
+ ['Data and inference','A sample is evidence about a larger group, not the whole group. Separate what the data show from what you infer; show uncertainty.'],
+ ['Hypothesis tests','A small p-value is evidence against H₀ under the model assumptions; it is not the probability that H₀ is true. Type I: reject a true H₀. Type II: fail to reject a false H₀.'],
+ ['Models & validation','White box uses physical laws; black box learns patterns from data; gray box combines both. Test predictions on fresh data and watch for over-fitting.'],
+ ['Design of experiments','Randomise runs, use replication to estimate noise, and use factorial designs to see interactions. One-factor-at-a-time can miss interactions.'],
+ ['Technical communication','Tell readers the question, why it matters, what you did, what you found, and what it means. Results are observations; discussion is interpretation.'],
+ ['Creativity & problem choice','Useful creative work combines knowledge, persistence, and testing. Pick a problem that is challenging but workable (the Medawar zone).'],
+ ['Research ethics & IPR','Get informed consent where needed, protect participants, disclose conflicts, avoid plagiarism and fabrication, and choose the right IP protection for the work.'],
+ ['Department discussions','The detailed application changes by field, but the common skills are clear questions, strong fundamentals, honest methods, communication, and collaboration.']
+];
+const plainExamples=[
+ 'Imagine you want to know whether a paper bridge can hold more coins. You ask a clear question, check what others already tried, make a bridge, test it carefully, and share what happened. That is research: a fair search for a new answer.',
+ 'Science is like checking a big claim with a test. If the test could never show the claim is wrong, it is hard to check scientifically. One result can support an idea, but new tests may still change our minds.',
+ 'A literature review is like joining a detective story halfway through. Read the clues other people found, check which clues are reliable, and look for the missing piece your project can investigate.',
+ 'A research paper is a set of clear directions for another person. Explain the question, steps, observations, and meaning so a reader can follow your work without guessing.',
+ 'An experiment is like baking while checking the oven beside the cake, not across the room. A display tells you what the sensor feels; calibration and a nearby measurement help you know what the sample actually experiences.',
+ 'Data analysis is like tasting a spoonful of soup to judge the pot. The spoon is a sample, so take it fairly and remember that a small sample can miss what is really in the whole pot.',
+ 'A model is like a map: useful for some trips, but never the whole world. A physics-based map uses rules; a data-based map learns from past trips. Check it on a route it has not seen before.',
+ 'A talk is a guided tour, not a storage room. Choose the few pictures and facts that help this audience understand the main point in the time you have.',
+ 'Creativity is not only having a sudden idea. It is noticing a problem, learning enough to try something new, then checking whether the idea actually works.',
+ 'Ethics is the promise to treat people fairly and tell the truth about your work. Intellectual property is a set of rules for who may use a creation and how permission or credit works.',
+ 'Design of experiments is like changing oven temperature and baking time in a planned way. If you change both carefully, you can learn whether they work together instead of guessing one at a time.',
+ 'Different research fields ask different questions, like different teams fixing different parts of a city. They still need careful evidence, honest records, clear explanations, and teamwork.'
+];
+const cheat=[
+ ['Quick formulas',`<ul><li><b>Sample mean:</b> x̄ = Σx / n</li><li><b>Sample variance:</b> s² = Σ(x − x̄)² / (n − 1)</li><li><b>Standard score:</b> z = (x − μ) / σ</li><li><b>95% CI for known σ:</b> x̄ ± 1.96 σ / √n</li><li><b>One-way ANOVA:</b> F = MS<sub>treatment</sub> / MS<sub>error</sub></li><li><b>Least squares:</b> β̂ = (X′X)⁻¹X′y</li><li><b>Coefficient of determination:</b> R² is the fraction of observed variation explained by the fitted model; adding predictors never lowers ordinary R².</li></ul>`],
+ ['Remember the distinctions',`<ul><li><b>Accuracy</b> = closeness to truth; <b>precision</b> = repeatability.</li><li><b>Result</b> = what was observed; <b>discussion</b> = what you think it means.</li><li><b>Primary source</b> = original study; <b>review</b> = a synthesis of studies.</li><li><b>White box</b> = physical laws; <b>black box</b> = patterns learned from data; <b>gray box</b> = both.</li><li><b>Type I</b> = false alarm (reject true H₀); <b>Type II</b> = miss (do not reject false H₀).</li><li><b>Replication</b> estimates variation; <b>randomisation</b> reduces bias from run order.</li></ul>`],
+ ['Design of experiments',`<ul><li>A full 2<sup>k</sup> factorial design has 2<sup>k</sup> runs before repeats.</li><li>Parallel lines on an interaction plot suggest little or no interaction.</li><li>Centre points help detect curvature; axial points in a central composite design estimate pure quadratic effects.</li><li>Use screening first when many factors exist; optimise after identifying the important ones.</li></ul>`],
+ ['IPR at a glance',`<ul><li><b>Patent:</b> protects a qualifying invention; generally 20 years from filing under Indian law.</li><li><b>Trademark:</b> protects a source-identifying name/logo; registration is renewable in 10-year periods.</li><li><b>Copyright:</b> protects expression (such as text or software code), not the underlying idea.</li><li><b>Industrial design:</b> protects qualifying visual features; Indian registration starts at 10 years and may be extended by 5.</li><li><b>Geographical indication:</b> links a product's identity/reputation to a place; registration is renewable in 10-year periods.</li></ul><p class="muted">IP terms are a quick revision guide; check current Indian rules for legal decisions. Official references: <a class="resource" href="https://ipindia.gov.in/pages/patents/learn/basics-of-patents" target="_blank" rel="noopener">patents</a> · <a class="resource" href="https://ipindia.gov.in/page-content/basics-of-trademarks" target="_blank" rel="noopener">trademarks</a> · <a class="resource" href="https://copyright.gov.in/Copyright_Act_1957/chapter_v.html" target="_blank" rel="noopener">copyright</a> · <a class="resource" href="https://ipindia.gov.in/page-content/basics-of-designs-1" target="_blank" rel="noopener">designs</a> · <a class="resource" href="https://ipindia.gov.in/pages/gi/learn/introduction" target="_blank" rel="noopener">GI</a>.</p>`],
+ ['Names to connect',`<ul><li><b>Pasteur:</b> use-inspired basic research (Stokes' quadrant).</li><li><b>Popper:</b> testability and falsification as ideas about scientific theories.</li><li><b>Roger Sperry:</b> split-brain research; course links left/right-brain ideas to creative stages.</li><li><b>Sternberg:</b> analytical, synthetic and practical intelligence.</li><li><b>Medawar:</b> choose research problems with a sensible balance of difficulty and payoff.</li><li><b>Yerkes–Dodson:</b> performance can fall when stress is too low or too high.</li><li><b>Csikszentmihalyi:</b> flow when challenge and skill are well matched.</li><li><b>Garrett Hardin:</b> formalised the “tragedy of the commons” idea.</li></ul>`],
+ ['Exam-day traps',`<ul><li>A p-value is <b>not</b> the probability the null hypothesis is true.</li><li>Correlation alone does not prove causation.</li><li>A high training score does not prove a model generalises; check fresh data.</li><li>Ordinary R² rises or stays level when predictors are added; adjusted R² can penalise needless terms.</li><li>Do not claim a finding is “proved” by one experiment; describe the evidence and its limits.</li><li>Practice questions here are original syllabus-based revision questions, not claimed past-paper questions.</li></ul>`]
+];
+const courseWeeks=[
+ {label:'Week 1 · Research foundations',units:[0,1],questions:()=>[...W[0].q,...W[1].q]},
+ {label:'Week 2 · Literature & experiments',units:[2,4],questions:()=>[...W[2].q,...W[4].q]},
+ {label:'Week 3 · Data & modelling',units:[5,6],questions:()=>[...W[5].q,...W[6].q]},
+ {label:'Week 4 · Writing, talks & creativity',units:[3,7],questions:()=>[...W[3].q,...W[7].q]},
+ {label:'Week 5 · Creativity & research ethics',units:[8,9],questions:()=>[...W[8].q,...W[9].q.slice(0,4)]},
+ {label:'Week 6 · Design of experiments',units:[10],questions:()=>W[10].q},
+ {label:'Week 7 · Intellectual property',units:[9],questions:()=>W[9].q.slice(4)},
+ {label:'Week 8 · Department discussions',units:[11],questions:()=>W[11].q}
+];
+function save(){try{localStorage.setItem('rm_done',JSON.stringify([...done]))}catch(e){}}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a}
+function drawNav(){nav.innerHTML='';sections.forEach(([id,label])=>{const b=document.createElement('button');b.textContent=label;b.className=id===section?'on':'';b.onclick=()=>{section=id;render()};nav.appendChild(b)})}
+function explanation(q){let why=(q[3]||'').trim();if(!why)why='This option best matches the idea being tested: “'+q[1][q[2]]+'.”';let example='Example: if a researcher needs to apply this idea, they would use “'+q[1][q[2]]+'” in the situation described, then explain what evidence supports it.';
+ const s=q[0].toLowerCase();
+ if(/p-value|low p|hypothesis/.test(s))example='Example: if a fair coin gives a very unusual run of heads, that is evidence to question the “fair coin” assumption; it does not tell you the probability that the coin is fair.';
+ else if(/type i/.test(s))example='Example: a smoke alarm that rings when there is no fire is a false alarm, like rejecting a true null hypothesis.';
+ else if(/type ii/.test(s))example='Example: a smoke alarm that stays quiet during a fire misses a real problem, like failing to reject a false null hypothesis.';
+ else if(/over-fit|overfitting/.test(s))example='Example: memorising every practice answer can give a perfect practice score but fail on a new question; a model can memorise noise in the same way.';
+ else if(/sample variance|variance of the sample mean|standard error|confidence interval/.test(s))example='Example: averages from larger, independent samples usually wobble less than averages from tiny samples, so uncertainty shrinks roughly with √n.';
+ else if(/interaction/.test(s))example='Example: a study method may help only when students also get enough sleep. That combined effect is an interaction.';
+ else if(/white box|gray.box|black box|model using conservation/.test(s))example='Example: predicting water level from mass-balance laws is white-box; fitting a curve from past readings is black-box; combining the law with fitted data is gray-box.';
+ else if(/literature|issn|isbn|doi|backward|forward chronological|h-index/.test(s))example='Example: to study a new topic, follow the references backward to find earlier work, then use citations forward to see later work.';
+ else if(/research|advisor|coursework|phd|80–20|80-20/.test(s))example='Example: a coursework task may have a known answer at the end; research may reveal that the first idea fails, so the researcher adjusts the question and tries again.';
+ else if(/design|factorial|randomis|centre point|central composite/.test(s))example='Example: when testing how temperature and pressure affect a material, change them in a planned combination so you can detect whether they work differently together.';
+ else if(/writing|abstract|result|discussion|presentation|slide/.test(s))example='Example: “the sample weighed 4 g” is a result; “the treatment improved strength because…” is discussion.';
+ else if(/patent|trademark|copyright|design right|geographical/.test(s))example='Example: a new technical mechanism may call for a patent; the logo on its package points to trademark protection.';
+ return why+(why.endsWith('.')?' ':' ')+example}
+function quiz(box,qs,idx){let answered=0,right=0;box.innerHTML='';const sc=document.createElement('div');sc.className='score';
+ qs.forEach((q,qi)=>{const d=document.createElement('div');d.className='q';const p=document.createElement('p');p.textContent=`${qi+1}. ${q[0]}`;d.appendChild(p);const ex=document.createElement('div');ex.className='ex';
+ q[1].forEach((o,oi)=>{const b=document.createElement('button');b.className='o';b.textContent=String.fromCharCode(65+oi)+'. '+o;b.onclick=()=>{if(d.dataset.done)return;d.dataset.done='1';answered++;d.querySelectorAll('.o').forEach((x,xi)=>{x.disabled=true;if(xi===q[2])x.classList.add('right')});if(oi===q[2])right++;else b.classList.add('wrong');ex.innerHTML=`<b>${oi===q[2]?'✓ Correct':'Answer: '+String.fromCharCode(65+q[2])+'. '+q[1][q[2]]}</b><br>${explanation(q)}`;ex.classList.add('s');if(answered===qs.length){sc.textContent=`Your score: ${right} / ${qs.length}`;if(idx!==null&&right/qs.length>=.6){(Array.isArray(idx)?idx:[idx]).forEach(i=>done.add(i));save();drawNav()}}};d.appendChild(b)});d.appendChild(ex);box.appendChild(d)});box.appendChild(sc)}
+function unitTitle(w){return w.t.replace(/^Week \d+\s*[–-]\s*/, '')}
+function weekPicker(onchange){const wrap=document.createElement('div');wrap.className='act';W.forEach((w,i)=>{const b=document.createElement('button');b.textContent=`Unit ${i+1}${done.has(i)?' ✓':''}`;b.className=i===cur?'':'g';b.onclick=()=>{cur=i;onchange()};wrap.appendChild(b)});return wrap}
+function progress(){const pct=Math.round(done.size/W.length*100);return `<div class="card progress-card"><div><div class="progress-number">${done.size} / ${W.length}</div><div class="muted">study units cleared</div></div><div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div><span class="muted">${pct}%</span></div>`}
+function renderStudy(){const w=W[cur];main.innerHTML=`<div class="weekhead"><span class="tag">Study unit ${cur+1}</span><div><h2>${unitTitle(w)}</h2><div class="src">${w.s} · Based on the supplied course transcript and NPTEL outline</div></div></div>${progress()}<div id="picker"></div><section class="card"><h2>In simple words</h2><p>${plainExamples[cur]}</p><div class="hot"><b>Study cue:</b> Learn the core idea, then ask what a real researcher would do with it. The ⭐ markers flag concepts emphasised in these course notes; they are not a promise about the exam.</div>${w.n}</section><section class="card"><h2>Check your understanding</h2><p class="muted">Choose an answer to see why it fits and a simple example.</p><div id="qb"></div></section>${sourceBlock()}`;document.getElementById('picker').appendChild(weekPicker(render));quiz(document.getElementById('qb'),w.q,cur)}
+function sourceBlock(){return `<section class="card"><h2>Course sources & exam note</h2><p class="muted">This study guide follows your supplied lecture transcript and the official IIT Madras NPTEL course outline. I could not locate an official public archive of previous certification exam papers. These are original, syllabus-aligned practice questions, not verified PYQs; they are for revision and cannot guarantee what will appear.</p><p><a class="resource" href="https://nptel.ac.in/courses/121106007" target="_blank" rel="noopener">Official NPTEL Research Methodology course ↗</a> · <a class="resource" href="https://archive.nptel.ac.in/content/syllabus_pdf/121106007.pdf" target="_blank" rel="noopener">Official syllabus PDF ↗</a> · <a class="resource" href="https://onlinecourses-archive.nptel.ac.in/noc17_ge05/preview" target="_blank" rel="noopener">Archived Introduction to Research course page ↗</a></p></section>`}
+function renderHome(){main.innerHTML=`<div class="card"><span class="tag">Your study desk</span><h2 style="margin-top:14px">Small steps. Strong research thinking.</h2><p class="muted">Start with one unit, practise the questions, and revisit the quick sheet before your exam. The material is written in plain language while keeping the course concepts intact.</p>${progress()}<div class="act"><button id="startStudy">${done.size?'Continue studying':'Start Week 1'}</button><button class="g" id="startQuiz">Try a weekly quiz</button></div></div><div class="important-grid"><div class="topic"><h3>📖 Study notes</h3><p>12 guided units mapped to the official 8-week course.</p></div><div class="topic"><h3>🎯 Weekly practice</h3><p>Answer questions and get immediate explanations with examples.</p></div><div class="topic"><h3>⚡ Fast revision</h3><p>Formulas, definitions, names and common exam traps in one place.</p></div></div><div class="disclaimer" style="margin-top:18px"><b>Honest exam prep:</b> These questions are practice, not leaked or verified previous-year questions. Use the course assignments and lectures as your primary preparation.</div>${sourceBlock()}`;document.getElementById('startStudy').onclick=()=>{section='study';render()};document.getElementById('startQuiz').onclick=()=>{section='practice';render()}}
+function renderImportant(){main.innerHTML=`<div class="card"><span class="tag">High-yield review</span><h2 style="margin-top:14px">Big ideas to know well</h2><p class="muted">Prioritised from the course outline and the supplied transcript. “High-yield” means foundational and useful across topics, not a prediction of exact exam questions.</p><input id="topicSearch" class="search" type="search" placeholder="Find a topic…"><div id="topicList" class="important-grid"></div></div>${sourceBlock()}`;const list=document.getElementById('topicList'),search=document.getElementById('topicSearch');const paint=()=>{list.innerHTML='';important.filter(x=>x.join(' ').toLowerCase().includes(search.value.toLowerCase())).forEach(([title,desc])=>{const d=document.createElement('article');d.className='topic';d.innerHTML=`<h3>${title}</h3><p>${desc}</p>`;list.appendChild(d)})};search.oninput=paint;paint()}
+function renderCheat(){main.innerHTML=`<div class="card"><span class="tag">Last-minute review</span><h2 style="margin-top:14px">Cheat sheet</h2><p class="muted">Use this to refresh memory after learning the concepts. Expand a section to review.</p></div>${cheat.map(([t,body],i)=>`<details class="card" ${i===0?'open':''}><summary style="cursor:pointer;font-size:1.08rem;font-weight:700;color:var(--ink)">${t}</summary><div style="padding-top:12px">${body}</div></details>`).join('')}${sourceBlock()}`}
+function courseWeekPicker(onchange){const wrap=document.createElement('div');wrap.className='act';courseWeeks.forEach((cw,i)=>{const b=document.createElement('button');b.textContent=`Week ${i+1}${cw.units.every(u=>done.has(u))?' ✓':''}`;b.className=i===practiceWeek?'':'g';b.onclick=()=>{practiceWeek=i;onchange()};wrap.appendChild(b)});return wrap}
+function renderPractice(){const cw=courseWeeks[practiceWeek],qs=cw.questions();main.innerHTML=`<div class="card"><span class="tag">8-week course practice</span><h2 style="margin-top:14px">Choose a course week</h2><p class="muted">Weekly quizzes follow the official NPTEL course outline. Each answer reveals the correct choice, why it fits, and an example.</p><div id="picker"></div></div><div class="card"><h2>${cw.label}</h2><p class="muted">${qs.length} syllabus-based practice questions</p><div id="qb"></div></div><div class="card"><h2>🎯 Mixed mock test</h2><p class="muted">25 questions drawn from all 12 guided study units.</p><div class="act"><button id="gen">Generate a new mock</button></div><div id="mb"></div></div>${sourceBlock()}`;document.getElementById('picker').appendChild(courseWeekPicker(render));quiz(document.getElementById('qb'),qs,cw.units);document.getElementById('gen').onclick=()=>quiz(document.getElementById('mb'),shuffle(W.flatMap(x=>x.q)).slice(0,25),null)}
+function render(){drawNav();if(section==='home')renderHome();else if(section==='study')renderStudy();else if(section==='important')renderImportant();else if(section==='practice')renderPractice();else renderCheat();window.scrollTo(0,0)}
+sections.unshift(['home','⌂ Home']);render();
+</script></body></html>
